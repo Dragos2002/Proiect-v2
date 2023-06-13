@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Xml.Linq;
+using System.Globalization;
 
 namespace Proiect_v2
 {
@@ -17,14 +20,14 @@ namespace Proiect_v2
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)//insert
         {
             // Create a custom form for the pop-up
             Form popupForm = new Form();
             popupForm.Text = "Student";
             popupForm.StartPosition = FormStartPosition.CenterScreen;
             popupForm.Width = 400;
-            popupForm.Height = 350;
+            popupForm.Height = 370;
             Label lblNrM = new Label();
             lblNrM.Text = "Nr matricol:";
             lblNrM.Location = new Point(10, 10);
@@ -63,7 +66,7 @@ namespace Proiect_v2
             Label lblData = new Label();
             lblData.Text = "Data insc:";
             lblData.Location = new Point(10, 160);
-            
+
             DateTimePicker data = new DateTimePicker();
             data.Location = new Point(120, 160);
 
@@ -81,19 +84,22 @@ namespace Proiect_v2
             TextBox txtMedia = new TextBox();
             txtMedia.Location = new Point(120, 220);
 
+
+            Label lblSpecializare = new Label();
+            lblSpecializare.Text = "Specializare:";
+            lblSpecializare.Location = new Point(10, 250);
+
+            TextBox txtSpecializare = new TextBox();
+            txtSpecializare.Location = new Point(120, 250);
+
             // Create an OK button
             Button btnOK = new Button();
             btnOK.Text = "OK";
             btnOK.DialogResult = DialogResult.OK;
-            btnOK.Location = new Point(120, 250);
+            btnOK.Location = new Point(120, 280);
             btnOK.Height = 30;
 
-            //Create an Cancel button
-            /*Button btnOK1 = new Button();
-            btnOK1.Text = "Cancel";
-            btnOK1.DialogResult = DialogResult.Cancel;
-            btnOK1.Location = new Point(190, 190);
-            btnOK1.Height = 30;*/
+
 
 
 
@@ -115,33 +121,86 @@ namespace Proiect_v2
             popupForm.Controls.Add(txtCicluInv);
             popupForm.Controls.Add(lblMedia);
             popupForm.Controls.Add(txtMedia);
+            popupForm.Controls.Add(lblSpecializare);
+            popupForm.Controls.Add(txtSpecializare);
             //popupForm.Controls.Add(btnOK1);
 
             // Show the pop-up form as a dialog
             DialogResult result = popupForm.ShowDialog();
-            /*if (result == DialogResult.Cancel)
-                popupForm.Close();*/
-            /*if (string.IsNullOrEmpty(txtName.Text)
-           || string.IsNullOrEmpty(txtUsername.Text)
-           || string.IsNullOrEmpty(txtPassword.Text))
-            {
-                MessageBox.Show("Completati toate campurile.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
 
 
-            // Process the result
             if (result == DialogResult.OK)
             {
                 // Access the entered values
-                string name = txtName.Text;
-                string username = txtUsername.Text;
-                string password = txtPassword.Text;
+                string NM = txtNrM.Text;
+                string Nume = txtNume.Text;
+                string Prenume = txtPrenume.Text;
+                string Initiala_tatalui = txtInT.Text;
+                string CNP = txtCNP.Text;
+                string Data = data.Value.ToString("yyyy-MM-dd"); // Formatul dorit, ex. "2023-06-13"
+                string Ciclu_de_inv = txtCicluInv.Text;
+                string Media = txtMedia.Text;
+                string Specializare = txtSpecializare.Text;
 
-                // Do something with the entered values
-                MessageBox.Show("Profesor inregistrat");
-            }*/
+                // Restul codului rămâne neschimbat
+                // ...
+
+                // Create the SQL query with parameter placeholders
+                string query = "INSERT INTO studAutomaticav3 (id, nume, prenume, initiala_tata, cnp, data_inscriere, ciclu_invatamant, medie, specializare)" +
+                                " VALUES (@NM, @Nume, @Prenume, @IT, @CNP, @Data, @CicluInv, @Media, @Specializare)";
+
+                string connectionString = "Data Source=ANDREI\\SQLEXPRESS;Initial Catalog=StudentiAutomatica;Integrated Security=True;";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Add parameter values to the command
+                        command.Parameters.AddWithValue("@NM", NM);
+                        command.Parameters.AddWithValue("@Nume", Nume);
+                        command.Parameters.AddWithValue("@Prenume", Prenume);
+                        command.Parameters.AddWithValue("@IT", Initiala_tatalui);
+                        command.Parameters.AddWithValue("@CNP", CNP);
+                        command.Parameters.AddWithValue("@Data", DateTime.ParseExact(Data, "yyyy-MM-dd", CultureInfo.InvariantCulture)); // Convertim stringul Data la tipul DateTime
+                        command.Parameters.AddWithValue("@CicluInv", Ciclu_de_inv);
+                        command.Parameters.AddWithValue("@Media", Media);
+                        command.Parameters.AddWithValue("@Specializare", Specializare);
+
+                        try
+                        {
+                            connection.Open();
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("Data inserted successfully!");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex.Message);
+                        }
+
+
+
+                    }
+                }
+            }
         }
+            private void btnInapoi_Click(object sender, EventArgs e)
+            {
+                this.Close(); // Închide formularul curent
+                Form1 Form1 = new Form1();
+                Form1.Show(); // Deschide Form1
+            }
+
+
+
+            private void Secretar_Load(object sender, EventArgs e)
+            {
+
+                SqlConnection con = new SqlConnection("Data Source=ANDREI\\SQLEXPRESS;Initial Catalog=StudentiAutomatica;Integrated Security=True;");
+                SqlDataAdapter sdaStudenti = new SqlDataAdapter(@"SELECT * FROM studAutomaticav3", con);
+                DataTable dt1 = new DataTable();
+                sdaStudenti.Fill(dt1);
+                dataGridStudenti.DataSource = dt1;
+            }
+        
     }
 }

@@ -503,7 +503,7 @@ namespace Proiect_v2
             }
         }
 
-        private void deleteProfesor_Click(object sender, EventArgs e)
+        private void deleteProfesor_Click(object sender, EventArgs e)//-----nu merge !!!!
         {
             if (dataGridProfesori.SelectedRows.Count > 0)
             {
@@ -514,7 +514,7 @@ namespace Proiect_v2
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "DELETE FROM Administratori WHERE ID = @ProfesorId";
+                    string query = "DELETE FROM Profesori WHERE ID = @ProfesorId";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -549,6 +549,13 @@ namespace Proiect_v2
             {
                 MessageBox.Show("Selectați un profesor pentru a-l șterge.");
             }
+        }
+
+        private void btnInapoi_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Închide formularul curent
+            Form1 Form1 = new Form1();
+            Form1.Show(); // Deschide Form1
         }
     }
 }

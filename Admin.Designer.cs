@@ -40,6 +40,7 @@
             this.deleteAdmin = new System.Windows.Forms.Button();
             this.deleteSecretar = new System.Windows.Forms.Button();
             this.deleteProfesor = new System.Windows.Forms.Button();
+            this.btnInapoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSecretari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProfesori)).BeginInit();
@@ -162,12 +163,23 @@
             this.deleteProfesor.UseVisualStyleBackColor = true;
             this.deleteProfesor.Click += new System.EventHandler(this.deleteProfesor_Click);
             // 
+            // btnInapoi
+            // 
+            this.btnInapoi.Location = new System.Drawing.Point(12, 12);
+            this.btnInapoi.Name = "btnInapoi";
+            this.btnInapoi.Size = new System.Drawing.Size(94, 29);
+            this.btnInapoi.TabIndex = 17;
+            this.btnInapoi.Text = "Inapoi";
+            this.btnInapoi.UseVisualStyleBackColor = true;
+            this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1272, 530);
+            this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.deleteProfesor);
             this.Controls.Add(this.deleteSecretar);
             this.Controls.Add(this.deleteAdmin);
@@ -181,6 +193,7 @@
             this.Controls.Add(this.dataGridSecretari);
             this.Controls.Add(this.dataGridAdmini);
             this.Name = "Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmini)).EndInit();
@@ -205,5 +218,6 @@
         private Button deleteAdmin;
         private Button deleteSecretar;
         private Button deleteProfesor;
+        private Button btnInapoi;
     }
 }
