@@ -12,9 +12,12 @@ namespace Proiect_v2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+      
 
+        
+
+        private void buttonAdmin_Click(object sender, EventArgs e)
+        {
             Admin Back = new Admin();
             this.Hide();
             Back.Show();
@@ -22,7 +25,7 @@ namespace Proiect_v2
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonSecretar_Click(object sender, EventArgs e)
         {
             Secretar Back = new Secretar();
             this.Hide();

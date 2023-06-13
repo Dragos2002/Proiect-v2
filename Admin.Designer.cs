@@ -28,144 +28,182 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
-            dataGridView3 = new DataGridView();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            SuspendLayout();
+            this.dataGridAdmini = new System.Windows.Forms.DataGridView();
+            this.dataGridSecretari = new System.Windows.Forms.DataGridView();
+            this.dataGridProfesori = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.InsAdmin = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.deleteAdmin = new System.Windows.Forms.Button();
+            this.deleteSecretar = new System.Windows.Forms.Button();
+            this.deleteProfesor = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSecretari)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProfesori)).BeginInit();
+            this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridAdmini
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(83, 99);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(300, 351);
-            dataGridView1.TabIndex = 0;
+            this.dataGridAdmini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAdmini.Location = new System.Drawing.Point(83, 99);
+            this.dataGridAdmini.Name = "dataGridAdmini";
+            this.dataGridAdmini.RowHeadersWidth = 51;
+            this.dataGridAdmini.RowTemplate.Height = 29;
+            this.dataGridAdmini.Size = new System.Drawing.Size(300, 351);
+            this.dataGridAdmini.TabIndex = 0;
             // 
-            // dataGridView2
+            // dataGridSecretari
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(485, 99);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(300, 351);
-            dataGridView2.TabIndex = 1;
+            this.dataGridSecretari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSecretari.Location = new System.Drawing.Point(485, 99);
+            this.dataGridSecretari.Name = "dataGridSecretari";
+            this.dataGridSecretari.RowHeadersWidth = 51;
+            this.dataGridSecretari.RowTemplate.Height = 29;
+            this.dataGridSecretari.Size = new System.Drawing.Size(300, 351);
+            this.dataGridSecretari.TabIndex = 1;
             // 
-            // dataGridView3
+            // dataGridProfesori
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(883, 99);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.Size = new Size(300, 351);
-            dataGridView3.TabIndex = 2;
+            this.dataGridProfesori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProfesori.Location = new System.Drawing.Point(883, 99);
+            this.dataGridProfesori.Name = "dataGridProfesori";
+            this.dataGridProfesori.RowHeadersWidth = 51;
+            this.dataGridProfesori.RowTemplate.Height = 29;
+            this.dataGridProfesori.Size = new System.Drawing.Size(300, 351);
+            this.dataGridProfesori.TabIndex = 2;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(196, 57);
-            label1.Name = "label1";
-            label1.Size = new Size(57, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Admini";
-            label1.Click += label1_Click;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(196, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Admini";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(595, 57);
-            label2.Name = "label2";
-            label2.Size = new Size(67, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Secretari";
-            label2.Click += label2_Click;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(595, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Secretari";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(1007, 57);
-            label3.Name = "label3";
-            label3.Size = new Size(68, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Profesori";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1007, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Profesori";
             // 
-            // button1
+            // InsAdmin
             // 
-            button1.Location = new Point(147, 474);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 29);
-            button1.TabIndex = 11;
-            button1.Text = "Insert Admin";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.InsAdmin.Location = new System.Drawing.Point(83, 474);
+            this.InsAdmin.Name = "InsAdmin";
+            this.InsAdmin.Size = new System.Drawing.Size(106, 29);
+            this.InsAdmin.TabIndex = 11;
+            this.InsAdmin.Text = "Insert Admin";
+            this.InsAdmin.UseVisualStyleBackColor = true;
+            this.InsAdmin.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            button2.Location = new Point(554, 474);
-            button2.Name = "button2";
-            button2.Size = new Size(162, 29);
-            button2.TabIndex = 12;
-            button2.Text = "Insert Secretar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.Location = new System.Drawing.Point(485, 474);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 29);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Insert Secretar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            button3.Location = new Point(956, 474);
-            button3.Name = "button3";
-            button3.Size = new Size(162, 29);
-            button3.TabIndex = 13;
-            button3.Text = "Insert Profesor";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            this.button3.Location = new System.Drawing.Point(883, 474);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 29);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Insert Profesor";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // deleteAdmin
+            // 
+            this.deleteAdmin.Location = new System.Drawing.Point(264, 474);
+            this.deleteAdmin.Name = "deleteAdmin";
+            this.deleteAdmin.Size = new System.Drawing.Size(119, 29);
+            this.deleteAdmin.TabIndex = 14;
+            this.deleteAdmin.Text = "Delete Admin";
+            this.deleteAdmin.UseVisualStyleBackColor = true;
+            this.deleteAdmin.Click += new System.EventHandler(this.deleteAdmin_Click);
+            // 
+            // deleteSecretar
+            // 
+            this.deleteSecretar.Location = new System.Drawing.Point(659, 474);
+            this.deleteSecretar.Name = "deleteSecretar";
+            this.deleteSecretar.Size = new System.Drawing.Size(126, 29);
+            this.deleteSecretar.TabIndex = 15;
+            this.deleteSecretar.Text = "Delete Secretar";
+            this.deleteSecretar.UseVisualStyleBackColor = true;
+            this.deleteSecretar.Click += new System.EventHandler(this.deleteSecretar_Click);
+            // 
+            // deleteProfesor
+            // 
+            this.deleteProfesor.Location = new System.Drawing.Point(1049, 474);
+            this.deleteProfesor.Name = "deleteProfesor";
+            this.deleteProfesor.Size = new System.Drawing.Size(134, 29);
+            this.deleteProfesor.TabIndex = 16;
+            this.deleteProfesor.Text = "Delete Profesor";
+            this.deleteProfesor.UseVisualStyleBackColor = true;
+            this.deleteProfesor.Click += new System.EventHandler(this.deleteProfesor_Click);
             // 
             // Admin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
-            ClientSize = new Size(1272, 530);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(dataGridView3);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
-            Name = "Admin";
-            Text = "Admin";
-            Load += Admin_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1272, 530);
+            this.Controls.Add(this.deleteProfesor);
+            this.Controls.Add(this.deleteSecretar);
+            this.Controls.Add(this.deleteAdmin);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.InsAdmin);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridProfesori);
+            this.Controls.Add(this.dataGridSecretari);
+            this.Controls.Add(this.dataGridAdmini);
+            this.Name = "Admin";
+            this.Text = "Admin";
+            this.Load += new System.EventHandler(this.Admin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSecretari)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProfesori)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
-        private DataGridView dataGridView3;
+        private DataGridView dataGridAdmini;
+        private DataGridView dataGridSecretari;
+        private DataGridView dataGridProfesori;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button1;
+        private Button InsAdmin;
         private Button button2;
         private Button button3;
+        private Button deleteAdmin;
+        private Button deleteSecretar;
+        private Button deleteProfesor;
     }
 }

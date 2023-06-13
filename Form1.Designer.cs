@@ -28,52 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonAdmin = new Button();
-            buttonSecretar = new Button();
-            buttonProfesor = new Button();
-            SuspendLayout();
+            this.buttonAdmin = new System.Windows.Forms.Button();
+            this.buttonSecretar = new System.Windows.Forms.Button();
+            this.buttonProfesor = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // buttonAdmin
             // 
-            buttonAdmin.Location = new Point(311, 82);
-            buttonAdmin.Name = "buttonAdmin";
-            buttonAdmin.Size = new Size(94, 29);
-            buttonAdmin.TabIndex = 0;
-            buttonAdmin.Text = "Admin";
-            buttonAdmin.UseVisualStyleBackColor = true;
-            buttonAdmin.Click += button1_Click;
+            this.buttonAdmin.Location = new System.Drawing.Point(311, 82);
+            this.buttonAdmin.Name = "buttonAdmin";
+            this.buttonAdmin.Size = new System.Drawing.Size(94, 29);
+            this.buttonAdmin.TabIndex = 0;
+            this.buttonAdmin.Text = "Admin";
+            this.buttonAdmin.UseVisualStyleBackColor = true;
+            this.buttonAdmin.Click += new System.EventHandler(this.buttonAdmin_Click);
             // 
             // buttonSecretar
             // 
-            buttonSecretar.Location = new Point(311, 174);
-            buttonSecretar.Name = "buttonSecretar";
-            buttonSecretar.Size = new Size(94, 29);
-            buttonSecretar.TabIndex = 1;
-            buttonSecretar.Text = "Secretar";
-            buttonSecretar.UseVisualStyleBackColor = true;
-            buttonSecretar.Click += button2_Click;
+            this.buttonSecretar.Location = new System.Drawing.Point(311, 174);
+            this.buttonSecretar.Name = "buttonSecretar";
+            this.buttonSecretar.Size = new System.Drawing.Size(94, 29);
+            this.buttonSecretar.TabIndex = 1;
+            this.buttonSecretar.Text = "Secretar";
+            this.buttonSecretar.UseVisualStyleBackColor = true;
+            this.buttonSecretar.Click += new System.EventHandler(this.buttonSecretar_Click);
             // 
             // buttonProfesor
             // 
-            buttonProfesor.Location = new Point(311, 267);
-            buttonProfesor.Name = "buttonProfesor";
-            buttonProfesor.Size = new Size(94, 29);
-            buttonProfesor.TabIndex = 2;
-            buttonProfesor.Text = "Profesor";
-            buttonProfesor.UseVisualStyleBackColor = true;
+            this.buttonProfesor.Location = new System.Drawing.Point(311, 267);
+            this.buttonProfesor.Name = "buttonProfesor";
+            this.buttonProfesor.Size = new System.Drawing.Size(94, 29);
+            this.buttonProfesor.TabIndex = 2;
+            this.buttonProfesor.Text = "Profesor";
+            this.buttonProfesor.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(buttonProfesor);
-            Controls.Add(buttonSecretar);
-            Controls.Add(buttonAdmin);
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonProfesor);
+            this.Controls.Add(this.buttonSecretar);
+            this.Controls.Add(this.buttonAdmin);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
