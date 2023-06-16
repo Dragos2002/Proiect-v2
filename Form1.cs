@@ -16,9 +16,9 @@ namespace Proiect_v2
 
         }
 
-      
 
-        
+
+
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
@@ -193,6 +193,9 @@ namespace Proiect_v2
                                 // Autentificare reușită pentru profesor
                                 MessageBox.Show("Autentificare reușită pentru profesor");
                                 // Aici puteți adăuga cod pentru a deschide formularul corespunzător profesorului
+                                Profesor Back = new Profesor();
+                                this.Hide();
+                                Back.Show();
                             }
                             else
                             {
@@ -210,6 +213,13 @@ namespace Proiect_v2
             {
                 MessageBox.Show("Selectați un tip de utilizator");
             }
+        }
+
+        private void buttonProfesor_Click(object sender, EventArgs e)
+        {
+            Profesor Back = new Profesor();
+            this.Hide();
+            Back.Show();
         }
     }
 }
