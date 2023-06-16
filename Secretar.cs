@@ -183,24 +183,55 @@ namespace Proiect_v2
                 }
             }
         }
-            private void btnInapoi_Click(object sender, EventArgs e)
-            {
-                this.Close(); // Închide formularul curent
-                Form1 Form1 = new Form1();
-                Form1.Show(); // Deschide Form1
-            }
+        private void btnInapoi_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Închide formularul curent
+            Form1 Form1 = new Form1();
+            Form1.Show(); // Deschide Form1
+        }
 
 
 
-            private void Secretar_Load(object sender, EventArgs e)
-            {
+        private void Secretar_Load(object sender, EventArgs e)
+        {
 
-                SqlConnection con = new SqlConnection("Data Source=ANDREI\\SQLEXPRESS;Initial Catalog=StudentiAutomatica;Integrated Security=True;");
-                SqlDataAdapter sdaStudenti = new SqlDataAdapter(@"SELECT * FROM studAutomaticav3", con);
-                DataTable dt1 = new DataTable();
-                sdaStudenti.Fill(dt1);
-                dataGridStudenti.DataSource = dt1;
-            }
-        
+            SqlConnection con = new SqlConnection("Data Source=ANDREI\\SQLEXPRESS;Initial Catalog=StudentiAutomatica;Integrated Security=True;");
+            SqlDataAdapter sdaStudenti = new SqlDataAdapter(@"SELECT * FROM studAutomaticav3", con);
+            DataTable dt1 = new DataTable();
+            sdaStudenti.Fill(dt1);
+            dataGridStudenti.DataSource = dt1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //for
+            //do while 
+            //cod grupa = 4 + L/M + F + cod profil + ultima cifra an + nr grupei
+            //if(ciclu inv = licenta) => rezulta L else M
+
+            //if(=L) if(specializare = aia) => 4 else if(=ti) => 3 else if(=etti) =>2
+            //else (=M) **asa si la master**
+            //x = char[9]
+            //doua contoare ,contor = total studenti - 10 la crearea altei grupe
+            // oprim while ,scadem iar -10 
+            //inser Grupa(cod grupa) into grupaTable
+            
+
+            
+            /*nrL = studneti.nrtotL;
+            nrM = studenti.nrtotM;
+            for(int i = 1; i <= nrL/10 + 1 ; i++) {
+                string codgrupa = new string();
+                if (specializare == aia)
+                    codgrupa = "4LF4";
+                else if (specializarea == ti)
+                    codgrupa = "4LF3";
+                else if(specializarea == etti)
+                codgrupa = "4LF2";
+                char x = data[3];
+                codgrupa = codgrupa + x + i;
+                Insert Grupa(codgrupa) into grupaTable;
+            }*/
+        }
     }
 }

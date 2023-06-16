@@ -28,68 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridStudenti = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnInapoi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudenti)).BeginInit();
-            this.SuspendLayout();
+            dataGridStudenti = new DataGridView();
+            label1 = new Label();
+            btnInsert = new Button();
+            btnInapoi = new Button();
+            dataGridView1 = new DataGridView();
+            label2 = new Label();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridStudenti).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // dataGridStudenti
             // 
-            this.dataGridStudenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStudenti.Location = new System.Drawing.Point(40, 112);
-            this.dataGridStudenti.Name = "dataGridStudenti";
-            this.dataGridStudenti.RowHeadersWidth = 51;
-            this.dataGridStudenti.RowTemplate.Height = 29;
-            this.dataGridStudenti.Size = new System.Drawing.Size(513, 512);
-            this.dataGridStudenti.TabIndex = 0;
+            dataGridStudenti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridStudenti.Location = new Point(721, 124);
+            dataGridStudenti.Name = "dataGridStudenti";
+            dataGridStudenti.RowHeadersWidth = 51;
+            dataGridStudenti.RowTemplate.Height = 29;
+            dataGridStudenti.Size = new Size(513, 512);
+            dataGridStudenti.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(255, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Studenti";
+            label1.AutoSize = true;
+            label1.Location = new Point(936, 85);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Studenti";
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(210, 656);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(154, 29);
-            this.btnInsert.TabIndex = 2;
-            this.btnInsert.Text = "Insert Student";
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.button1_Click_1);
+            btnInsert.Location = new Point(891, 668);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(154, 29);
+            btnInsert.TabIndex = 2;
+            btnInsert.Text = "Insert Student";
+            btnInsert.UseVisualStyleBackColor = true;
+            btnInsert.Click += button1_Click_1;
             // 
             // btnInapoi
             // 
-            this.btnInapoi.Location = new System.Drawing.Point(12, 12);
-            this.btnInapoi.Name = "btnInapoi";
-            this.btnInapoi.Size = new System.Drawing.Size(94, 29);
-            this.btnInapoi.TabIndex = 3;
-            this.btnInapoi.Text = "Inapoi";
-            this.btnInapoi.UseVisualStyleBackColor = true;
-            this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
+            btnInapoi.Location = new Point(12, 12);
+            btnInapoi.Name = "btnInapoi";
+            btnInapoi.Size = new Size(94, 29);
+            btnInapoi.TabIndex = 3;
+            btnInapoi.Text = "Inapoi";
+            btnInapoi.UseVisualStyleBackColor = true;
+            btnInapoi.Click += btnInapoi_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(77, 124);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(513, 512);
+            dataGridView1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(175, 85);
+            label2.Name = "label2";
+            label2.Size = new Size(49, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Grupe";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(113, 668);
+            button1.Name = "button1";
+            button1.Size = new Size(154, 29);
+            button1.TabIndex = 6;
+            button1.Text = "Generare Grupa";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Secretar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 734);
-            this.Controls.Add(this.btnInapoi);
-            this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridStudenti);
-            this.Name = "Secretar";
-            this.Text = "Secretar";
-            this.Load += new System.EventHandler(this.Secretar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudenti)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1362, 734);
+            Controls.Add(button1);
+            Controls.Add(label2);
+            Controls.Add(dataGridView1);
+            Controls.Add(btnInapoi);
+            Controls.Add(btnInsert);
+            Controls.Add(label1);
+            Controls.Add(dataGridStudenti);
+            Name = "Secretar";
+            Text = "Secretar";
+            Load += Secretar_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridStudenti).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -98,6 +134,9 @@
         private Label label1;
         private Button btnInsert;
         private Button btnInapoi;
+        private DataGridView dataGridView1;
+        private Label label2;
+        private Button button1;
     }
 }
 
